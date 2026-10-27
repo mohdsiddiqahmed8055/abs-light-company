@@ -47,7 +47,7 @@ function Index() {
           </div>
         </header>
         <section id="top" className={"\x72elative \x66lex \x6din-h-screen \x69tems-center \x6austify-center \x6fverflow-hidden \x62g-secondary"}>
-          <img alt="Illuminated wedding stage with ivory florals and gold drapes" width="1920" height="1088" className={"\x61bsolute \x69nset-0 \x68-full \x77-full \x73cale-105 \x6fbject-cover"} src="/site-assets/c3e12199865764fa.jpg" />
+          <video aria-label="Illuminated wedding stage with ivory florals and gold drapes" className="absolute inset-0 h-full w-full object-cover" src="/__l5e/assets-v1/6791b687-1494-4393-91bf-25fcf23c89dd/hero-loop.mp4" autoPlay muted loop playsInline preload="auto" />
           <div className={"\x61bsolute \x69nset-0 \x62g-overlay"} />
           <div className={"\x72elative \x7a-10 \x6dx-auto \x6dax-w-4xl \x70x-6 \x74ext-center \x74ext-secondary-foreground"}>
             <p className={"\x65yebrow \x72eveal"} style={{ transform: "translateY(0px)", opacity: "1" } as unknown as CSSProperties}>Weddings &amp; Celebrations</p>
