@@ -14,6 +14,5 @@ export function LovableBadge() {
       	
       	<button id="lovable-badge-close" aria-label="Dismiss" title="Dismiss" type="button">{"\n\t\t"}<svg fill="none" viewBox="0 0 16 16" aria-hidden="true" {...({ xmlns: "http://www.w3.org/2000/svg", width: "16", height: "16" } as any)}>{"\n\t\t\t"}<path d="M10.646 4.646a.5.5 0 1 1 .707.708L8.707 8l2.646 2.646a.5.5 0 1 1-.707.707L8 8.707l-2.646 2.646a.5.5 0 1 1-.708-.707L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708L8 7.293l2.646-2.647Z" />{"\n\t\t"}</svg>{"\n\t"}</button>
       </aside>
-      <main>
   );
 }
