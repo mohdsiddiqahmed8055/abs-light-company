@@ -79,14 +79,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "ABS Wedding Planner" },
+      {
+        name: "description",
+        content:
+          "Luxury wedding and event planning in Hyderabad — stage décor, mandaps, receptions, sound, lighting and full production under one roof.",
+      },
+      { name: "author", content: "ABS Wedding Planner" },
+      { property: "og:title", content: "ABS Wedding Planner" },
+      {
+        property: "og:description",
+        content:
+          "Luxury wedding and event planning in Hyderabad — design, décor and technical production delivered with care.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
