@@ -8,8 +8,10 @@ type IconLink = { rel?: string; href?: string; type?: string; sizes?: string };
 // from the root route's head(), so assert they are all present and point at the
 // real files in public/.
 describe("Site icon", () => {
-  const head = (Route.options as { head: () => { links?: IconLink[] } }).head();
-  const byHref = new Map((head.links ?? []).map((link) => [link.href, link]));
+  const head = (
+    Route.options as unknown as { head: (ctx?: unknown) => { links?: IconLink[] } }
+  ).head;
+  const byHref = new Map((head({}).links ?? []).map((link) => [link.href, link]));
 
   it.each(["/favicon.svg", "/favicon.ico", "/favicon.png", "/apple-touch-icon.png"])(
     "declares %s as an icon",
