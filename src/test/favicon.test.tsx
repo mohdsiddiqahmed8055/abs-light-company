@@ -2,12 +2,14 @@ import { describe, expect, it } from "vitest";
 
 import { Route } from "@/routes/__root";
 
+type IconLink = { rel?: string; href?: string; type?: string; sizes?: string };
+
 // The browser-tab icon is the brand mark: every page inherits these declarations
 // from the root route's head(), so assert they are all present and point at the
 // real files in public/.
 describe("Site icon", () => {
-  const links = Route.head().links ?? [];
-  const byHref = new Map(links.map((link) => [link.href, link]));
+  const head = (Route.options as { head: () => { links?: IconLink[] } }).head();
+  const byHref = new Map((head.links ?? []).map((link) => [link.href, link]));
 
   it.each(["/favicon.svg", "/favicon.ico", "/favicon.png", "/apple-touch-icon.png"])(
     "declares %s as an icon",
