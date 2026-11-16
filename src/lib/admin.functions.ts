@@ -25,12 +25,13 @@ const actionSchema = z.discriminatedUnion('kind', [
   z.object({ kind: z.literal('delete'), table: z.enum(['projects','events','enquiries']), id: z.string().uuid() }),
   z.object({ kind: z.literal('profile'), display_name: z.string().trim().min(1).max(100) }),
 ]);
+const clean = <T extends object>(v: T) => Object.fromEntries(Object.entries(v).filter(([, x]) => x !== undefined)) as { [K in keyof T]-?: Exclude<T[K], undefined> };
 export const adminSave = createServerFn({ method: 'POST' }).middleware([requireSupabaseAuth]).inputValidator(actionSchema).handler(async ({ context, data }) => {
   const role = await context.supabase.rpc('has_role', { _user_id: context.userId, _role: 'admin' });
   requireAdminRole(!role.error && role.data === true);
   let error;
-  if (data.kind === 'project') ({ error } = await context.supabase.from('projects').upsert(data.value));
-  if (data.kind === 'event') ({ error } = await context.supabase.from('events').upsert(data.value));
+  if (data.kind === 'project') ({ error } = await context.supabase.from('projects').upsert(clean(data.value)));
+  if (data.kind === 'event') ({ error } = await context.supabase.from('events').upsert(clean(data.value)));
   if (data.kind === 'enquiry') ({ error } = await context.supabase.from('enquiries').update({ status: data.status, notes: data.notes }).eq('id', data.id));
   if (data.kind === 'delete') ({ error } = await context.supabase.from(data.table).delete().eq('id', data.id));
   if (data.kind === 'profile') ({ error } = await context.supabase.from('profiles').update({ display_name: data.display_name }).eq('id', context.userId));
