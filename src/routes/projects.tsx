@@ -54,6 +54,30 @@ function ProjectsPage() {
                 <span className={"\x66ont-display \x74ext-2xl \x74ext-secondary-foreground"}>Event Production</span>
               </div>
             </button>
+            <button className="group relative overflow-hidden" aria-label="Open LED Lights">
+              <img alt="Wedding reception stage illuminated with colorful LED lighting" className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/site-assets/led-lighting-gallery.webp" loading="lazy" />
+              <div className="absolute inset-0 flex items-end bg-overlay p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <span className="font-display text-2xl text-secondary-foreground">LED Lights</span>
+              </div>
+            </button>
+            <button className="group relative overflow-hidden" aria-label="Open Chandelier Lights">
+              <img alt="Crystal jhummer chandeliers glowing above a wedding reception" className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/site-assets/chandelier-gallery.webp" loading="lazy" />
+              <div className="absolute inset-0 flex items-end bg-overlay p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <span className="font-display text-2xl text-secondary-foreground">Chandelier Lights</span>
+              </div>
+            </button>
+            <button className="group relative overflow-hidden" aria-label="Open Candle Stand Lights">
+              <img alt="Tall candle stand lights among wedding reception flowers" className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/site-assets/candle-stand-gallery.webp" loading="lazy" />
+              <div className="absolute inset-0 flex items-end bg-overlay p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <span className="font-display text-2xl text-secondary-foreground">Candle Stand Lights</span>
+              </div>
+            </button>
+            <button className="group relative overflow-hidden" aria-label="Open House Lights">
+              <img alt="Family home decorated with lights for a wedding celebration" className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/site-assets/house-lighting-gallery.webp" loading="lazy" />
+              <div className="absolute inset-0 flex items-end bg-overlay p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <span className="font-display text-2xl text-secondary-foreground">House Lights</span>
+              </div>
+            </button>
           </div>
         </div>
       </section>
